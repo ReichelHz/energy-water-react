@@ -1,0 +1,125 @@
+.form-container {
+  background-color: #f9f9f9;
+  padding: 30px;
+  max-width: 500px;
+  margin: 50px auto;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #101e33;
+}
+
+.form-container label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f2f2f2;
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+.form-container input:-webkit-autofill,
+.form-container textarea:-webkit-autofill {
+  -webkit-text-fill-color: black;
+  background-color: #f2f2f2 !important;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+  background-color: #e0e0e0;
+  outline: none;
+}
+
+.form-container textarea {
+  height: 100px;
+}
+
+.form-container button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #FF5722;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #e64a19;
+}
+
+.form-container button:disabled {
+  background-color: #ccc;
+}
+
+.form-container p {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* ✅ CASILLA PERSONALIZADA */
+.form-container input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+  position: relative;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.form-container input[type="checkbox"]:checked::after {
+  content: '✔';
+  position: absolute;
+  top: 0;
+  left: 3px;
+  font-size: 14px;
+  color: #FF5722;
+}
+
+.form-container input[type="checkbox"]:hover {
+  border-color: #999;
+}
+
+/* Contenedor visual para los términos */
+.form-container .terms-container {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+.form-container label.checkbox-label {
+  color: #333;
+  font-weight: normal;
+}
+.form-container input:-webkit-autofill,
+.form-container textarea:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px #f2f2f2 inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px #f2f2f2 inset !important;
+  -webkit-text-fill-color: black !important;
+  transition: background-color 5000s ease-in-out 0s;
+}

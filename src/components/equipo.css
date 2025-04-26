@@ -1,0 +1,63 @@
+/* equipo.css */
+
+/* Estilos generales para la sección del equipo */
+.equipo-section {
+  padding: 60px 20px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+/* Estilo para las tarjetas */
+.equipo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: none;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 280px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Imagen del miembro del equipo */
+.equipo-card-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: none;
+}
+
+/* Títulos */
+.equipo-card h6 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}
+
+/* Cargo debajo del nombre */
+.equipo-card .MuiTypography-subtitle1 {
+  font-size: 1rem;
+  color: #777;
+  margin: 5px 0;
+}
+
+/* Descripción */
+.equipo-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 10px;
+  text-align: justify;
+}
+
+/* Estilo en hover de la tarjeta */
+.equipo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}

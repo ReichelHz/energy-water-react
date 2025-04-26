@@ -1,42 +1,147 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* === GLOBAL RESET === */
+/* Incluir la fuente Readex Pro desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Readex Pro', sans-serif;
+  overflow-x: hidden;
+  background-color: #F8F9FC;  /* Color de fondo */
+  color: black; /* Para asegurarse de que el texto sea visible */
+}
+
+/* === SECCIÓN DE BIENVENIDA === */
+.welcome-banner {
+  position: relative;
+  width: 100vw;
+  height: 500px;  /* Altura del banner */
+  background-color: #101E33; /* Color de fondo si la imagen no carga */
+  overflow: hidden;
+  margin-top: 0; /* Asegurarnos de que no haya margen superior que cause desplazamiento */
+}
+
+.welcome-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* La imagen cubre todo el espacio sin distorsionarse */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);  /* Capa oscura encima de la imagen */
+  z-index: 1;
+}
+
+.welcome-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
+  color: white;
+  z-index: 2;
+  padding: 0 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.welcome-text h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.welcome-text p {
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+/* === RESPONSIVE: Ajustes para pantallas pequeñas === */
+@media (max-width: 768px) {
+  /* Ajustes en el banner */
+  .welcome-banner {
+    height: 400px;  /* Reducir altura para dispositivos móviles */
   }
-  to {
-    transform: rotate(360deg);
+
+  .welcome-text h1 {
+    font-size: 28px;  /* Título más pequeño en móviles */
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  .welcome-text p {
+    font-size: 16px;  /* Reducir el tamaño del texto en móviles */
+    line-height: 1.5;
+    margin: 0 10px;
+  }
+
+  /* Añadir un poco de padding para evitar que el texto toque los bordes */
+  .welcome-text {
+    padding: 0 15px;
+  }
+
+  /* Ajuste en la imagen de fondo */
+  .welcome-image {
+    object-position: center;  /* Asegurar que la imagen de fondo esté centrada */
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* === HEADER para dispositivos móviles === */
+@media (max-width: 768px) {
+  .header {
+    padding: 5px 10px; /* Ajustar el padding para hacer el header más delgado */
+    height: 50px; /* Reducir altura del header en móviles */
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .logo-img {
+    height: 30px; /* Reducir el tamaño del logo */
+  }
 
-.read-the-docs {
-  color: #888;
+  .logo-text {
+    font-size: 18px; /* Ajustar el tamaño del texto del logo */
+  }
+
+  /* Cambiar la dirección de la navegación para móviles */
+  .nav-list {
+    flex-direction: column;
+    gap: 10px; /* Espaciado entre los elementos */
+    align-items: center;  /* Centrar los elementos */
+  }
+
+  .nav-item a {
+    font-size: 16px; /* Ajustar el tamaño de los links en móviles */
+  }
+
+  /* Menú desplegable en móviles */
+  .nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav.active {
+    max-height: 300px;  /* Mostrar el menú desplegable */
+  }
+
+  .menu-toggle {
+    display: block;  /* Hacer visible el icono de menú hamburguesa */
+  }
 }

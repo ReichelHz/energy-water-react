@@ -1,0 +1,142 @@
+/* General */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Esto asegura que el footer se quede al final */
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  flex-grow: 1; /* Permite que el contenido ocupe el espacio disponible */
+  text-align: center;
+  width: 100%;  /* Esto hace que el contenido ocupe todo el ancho */
+}
+
+footer {
+  background-color: #353333; /* Gris oscuro */
+  color: white;
+  padding: 10px 0; /* Espaciado superior e inferior */
+  text-align: center; /* Centra el contenido del footer */
+  width: 100%; /* Asegura que el footer abarque todo el ancho */
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer-content {
+  max-width: 1280px; /* Limita el ancho del contenido */
+  margin: 0 auto; /* Centra el contenido */
+  padding: 0 15px; /* Padding para evitar que el contenido toque los bordes */
+  text-align: center; /* Centra el texto */
+}
+
+/* Estilos generales */
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+/* Estilos del contenido principal */
+.main-content {
+  margin-top: 100px;  /* Asegúrate de que el contenido no se sobreponga */
+  padding: 20px; /* O algún padding para que el contenido tenga espacio */
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilos de la logo */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+  header {
+    padding: 15px;
+    font-size: 14px;
+  }
+  
+  footer {
+    font-size: 12px;
+  }
+
+  .footer-content {
+    padding: 0 10px; /* Ajusta el padding en pantallas pequeñas */
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+}
+
+/* Para pantallas medianas (tabletas) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  header {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+
+  .footer-content {
+    padding: 0 20px; /* Ajuste en tabletas */
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+}
+
+/* Para pantallas grandes (computadoras de escritorio) */
+@media (min-width: 1025px) {
+  header {
+    padding: 30px;
+    font-size: 18px;
+  }
+
+  footer {
+    font-size: 16px;
+  }
+
+  .footer-content {
+    padding: 0 30px; /* Ajuste de padding en pantallas grandes */
+  }
+
+  .main-content {
+    padding: 30px;
+  }
+}

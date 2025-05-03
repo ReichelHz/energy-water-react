@@ -3,8 +3,9 @@
 /* Estilos generales para la sección del equipo */
 .equipo-section {
   padding: 60px 20px;
-  background-color: #f7f7f7;
+  background-color: #ffffff;
   text-align: center;
+  
 }
 
 /* Estilo para las tarjetas */
@@ -36,9 +37,10 @@
 .equipo-card h6 {
   font-size: 1.3rem;
   font-weight: 500;
-  color: #333;
+  color: #070000;
   margin: 0;
-}
+  font-family: 'Readex Pro', sans-serif;
+} 
 
 /* Cargo debajo del nombre */
 .equipo-card .MuiTypography-subtitle1 {
@@ -50,7 +52,7 @@
 /* Descripción */
 .equipo-card p {
   font-size: 0.95rem;
-  color: #555;
+  color: #040000;
   line-height: 1.6;
   margin-top: 10px;
   text-align: justify;

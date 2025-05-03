@@ -64,18 +64,36 @@
 }
 
 .nav-item a {
+  position: relative;
   color: white;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 250;
   transition: color 0.3s ease;
 }
 
-.nav-item a:hover {
-  color: #D3512B;  /* Naranja */
+.nav-item a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* Ajusta la distancia desde el texto */
+  width: 0%;
+  height: 2px;
+  background-color: #D3512B; /* Naranja */
+  transition: width 0.3s ease;
 }
 
+.nav-item a:hover::after {
+  width: 100%;
+}
+
+
+/* Estado cuando el header tiene clase .scrolled */
 .header.scrolled .nav-item a {
-  color: #000;
+  color: black;
+}
+
+.header.scrolled .nav-item a::after {
+  background-color: #D3512B; /* Mantiene el subrayado naranja */
 }
 
 /* === MENU RESPONSIVO === */

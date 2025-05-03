@@ -8,13 +8,61 @@
   box-sizing: border-box;
 }
 
+/* Definir la base de la fuente */
+html {
+  font-size: 16px;  /* Esto define el tamaño base de las fuentes (1rem = 16px) */
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Readex Pro', sans-serif;
   overflow-x: hidden;
-  background-color: #F8F9FC;  /* Color de fondo */
-  color: black; /* Para asegurarse de que el texto sea visible */
+  background-color: #F7F7F7; /* Color de fondo */
+  color: black; /* Asegurarse de que el texto sea visible */
+  font-size: 1rem;  /* Esto garantiza que 1rem sea igual a 16px */
+  line-height: 1.6; /* Aumenta el espacio entre líneas para mejorar la legibilidad */
+}
+
+/* === TÍTULOS === */
+h1 {
+  font-size: 2.25rem; /* 36px */
+}
+
+h2 {
+  font-size: 2rem; /* 32px */
+}
+
+h3 {
+  font-size: 1.75rem; /* 28px */
+}
+
+h4 {
+  font-size: 1.5rem; /* 24px */
+}
+
+h5 {
+  font-size: 1.25rem; /* 20px */
+}
+
+h6 {
+  font-size: 1rem; /* 16px */
+}
+
+/* === PÁRRAFOS Y TEXTO === */
+p {
+  font-size: 1rem; /* 16px */
+  line-height: 1.6;  /* Espacio entre líneas */
+}
+
+.subtitle {
+  font-size: 1.125rem; /* 18px */
+}
+
+/* === BOTONES === */
+button {
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 /* === SECCIÓN DE BIENVENIDA === */
@@ -59,12 +107,12 @@ body {
 }
 
 .welcome-text h1 {
-  font-size: 36px;
+  font-size: 2.25rem; /* 36px */
   margin-bottom: 10px;
 }
 
 .welcome-text p {
-  font-size: 20px;
+  font-size: 1rem; /* 16px */
   font-weight: lighter;
 }
 
@@ -76,18 +124,17 @@ body {
   }
 
   .welcome-text h1 {
-    font-size: 28px;  /* Título más pequeño en móviles */
+    font-size: 2rem;  /* Reducir el tamaño del título en móviles */
     line-height: 1.2;
     margin-bottom: 10px;
   }
 
   .welcome-text p {
-    font-size: 16px;  /* Reducir el tamaño del texto en móviles */
+    font-size: 1rem;  /* Reducir el tamaño del párrafo en móviles */
     line-height: 1.5;
     margin: 0 10px;
   }
 
-  /* Añadir un poco de padding para evitar que el texto toque los bordes */
   .welcome-text {
     padding: 0 15px;
   }
@@ -96,52 +143,29 @@ body {
   .welcome-image {
     object-position: center;  /* Asegurar que la imagen de fondo esté centrada */
   }
-}
 
-/* === HEADER para dispositivos móviles === */
-@media (max-width: 768px) {
+  /* === HEADER para dispositivos móviles === */
   .header {
-    padding: 5px 10px; /* Ajustar el padding para hacer el header más delgado */
-    height: 50px; /* Reducir altura del header en móviles */
+    padding: 5px 10px;
+    height: 50px;
   }
 
   .logo-img {
-    height: 30px; /* Reducir el tamaño del logo */
+    height: 30px;
   }
 
   .logo-text {
-    font-size: 18px; /* Ajustar el tamaño del texto del logo */
+    font-size: 1.125rem; /* Ajustar tamaño del logo en móviles */
   }
 
   /* Cambiar la dirección de la navegación para móviles */
   .nav-list {
     flex-direction: column;
-    gap: 10px; /* Espaciado entre los elementos */
-    align-items: center;  /* Centrar los elementos */
+    gap: 10px;
+    align-items: center;
   }
 
   .nav-item a {
-    font-size: 16px; /* Ajustar el tamaño de los links en móviles */
-  }
-
-  /* Menú desplegable en móviles */
-  .nav {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background-color: white;
-    flex-direction: column;
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-
-  .nav.active {
-    max-height: 300px;  /* Mostrar el menú desplegable */
-  }
-
-  .menu-toggle {
-    display: block;  /* Hacer visible el icono de menú hamburguesa */
+    font-size: 1rem;  /* Ajuste en tamaño de links */
   }
 }

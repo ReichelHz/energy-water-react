@@ -1,114 +1,109 @@
-/* Configuración global y fuente */
-:root {
-  font-family: 'Readex Pro', sans-serif;  /* Fuente global */
+/* === GLOBAL RESET === */
+* {
   margin: 0;
   padding: 0;
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
+  box-sizing: border-box;
 }
 
 body {
-  min-height: 100vh;  /* Asegura que la altura mínima de la página sea la altura completa de la ventana */
+  margin: 0;
+  padding: 0;
+  font-family: 'Readex Pro', sans-serif;
+  overflow-x: hidden;
+  background-color: #F8F9FC;  /* Color de fondo global */
+  color: black; /* Para asegurarse de que el texto sea visible */
+  min-height: 100vh;  /* Asegura que el body tenga al menos la altura de la ventana */
   display: flex;
   flex-direction: column;
-  margin: 0;
 }
 
-.main-content {
-  margin-top: 100px;
-  padding: 0; /* o solo padding-top si lo necesitas */
+/* === SECCIÓN DE BIENVENIDA === */
+.welcome-banner {
+  position: relative;
+  width: 100vw;
+  height: 500px;  /* Altura del banner */
+  background-color: #101E33; /* Color de fondo si la imagen no carga */
+  overflow: hidden;
+  margin-top: 0;
 }
 
-/* Títulos */
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.welcome-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+  padding: 0 20px;
 }
 
-/* Botones */
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+/* Secciones de contenido */
+#historia, #equipo {
+  padding: 50px 20px;
+  transition: background-color 0.3s ease;
+  margin: 0; /* Eliminar cualquier margen adicional entre las secciones */
 }
 
-button:hover {
-  border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-/* Estilos para el fondo y color de las secciones */
 #historia {
-  background-color: #FFFFFF;  /* Fondo blanco para la sección Nuestra Historia */
-  color: #000;  /* Color de texto negro */
-  transition: background-color 0.3s ease;  /* Efecto suave al cambiar el fondo */
+  background-color: #FFFFFF; /* Fondo blanco para la sección Historia */
 }
 
-#equipo, #preguntas-frecuentes {
-  background-color: #F8F9FC;  /* Fondo gris claro para estas secciones */
-  color: #000;  /* Color de texto negro */
-  transition: background-color 0.3s ease;  /* Efecto suave al cambiar el fondo */
+#equipo {
+  background-color: #F7F7F7; /* Fondo gris suave para la sección Equipo */
 }
 
+/* === SECCIÓN DE PREGUNTAS FRECUENTES (FAQ) === */
+#preguntas-frecuentes {
+  background-color: #F7F7F7; /* Fondo gris suave para FAQ */
+  padding: 50px 20px;
+  margin: 0; /* Eliminar el margen superior entre las secciones */ 
+}
+
+/* === SECCIÓN DE CONTACTO === */
 #contacto {
-  background-color: #FFFFFF;  /* Fondo blanco para la sección Contáctanos */
-  color: #000;  /* Color de texto negro */
-  transition: background-color 0.3s ease;  /* Efecto suave al cambiar el fondo */
+  background-color: #FFFFFF; /* Fondo blanco para la sección de contacto */
+  padding-top: 25px;
 }
 
-/* Estilo para los enlaces del menú */
-.nav-item a {
-  font-family: 'Readex Pro', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 27.4286px;
-  color: #646cff;
-  text-decoration: none;
-  text-align: left;
-  word-spacing: 0px;
+/* Ajuste de la altura mínima para las secciones */
+#historia,  #contacto {
+  min-height: 100vh; /* Asegura que las secciones llenen toda la altura */
 }
 
-.nav-item a:hover {
-  color: #535bf2;
+/* Ajustes en el contenido principal */
+.main-content {
+  margin-top: 0; /* Eliminar el margen superior que separa las secciones */
+  padding: 0;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* Modificar el fondo para el body y las secciones */
+body, .main-content {
+  background-color: #F8F9FC; /* Fondo general */
+}
+
+/* Quitar los márgenes adicionales entre secciones */
+#equipo {
+  margin-top: 0; /* Eliminar el margen superior */
+}
+
+/* Si el padding de la sección "Nuestro Equipo" es demasiado grande, ajustar */
+#equipo {
+  padding-bottom: 0; /* Reducir el padding inferior si es necesario */
+}
+
+/* === Espaciado entre secciones === */
+
+/* Móvil */
+@media (max-width: 768px) {
+  #equipo {
+    margin-bottom: 40px; /* Espacio debajo del equipo */
   }
 
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
+  #preguntas-frecuentes {
+    margin-top: 30px; /* Espacio ar riba en móvil */
+    margin-bottom: 40px; /* Espacio debajo para separar de contacto */
   }
 }
+
+

@@ -2,7 +2,7 @@
   background-color: #f9f9f9;
   padding: 30px;
   max-width: 500px;
-  margin: 50px auto;
+  margin: 50px auto; /* Puedes cambiar el margen superior e inferior */
   border-radius: 10px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }

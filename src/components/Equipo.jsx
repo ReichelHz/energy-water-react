@@ -27,14 +27,39 @@ const Equipo = () => {
   ];
 
   return (
-    <section id="equipo" className="equipo-section" role="region" aria-labelledby="equipo-titulo" style={{ padding: '60px 20px', backgroundColor: '#f7f7f7', textAlign: 'center' }}>
-      <Typography variant="h4" align="center" gutterBottom id="equipo-titulo">
-        Nuestro Equipo
-      </Typography>
-      <Grid container spacing={3} justifyContent="center">
+    <section
+      id="equipo"
+      className="equipo-section"
+      role="region"
+      aria-labelledby="equipo-titulo"
+      style={{
+        padding: '60px 20px',
+        backgroundColor: '#f7f7f7',
+        textAlign: 'center',
+        marginBottom: '60px', // Asegura un buen espaciado entre las secciones
+        minHeight: '100vh', // Asegura que la sección tenga suficiente altura
+        overflow: 'hidden', // Evita cualquier desbordamiento
+      }}
+    >
+      <Typography variant="h4" align="center" gutterBottom id="equipo-titulo" sx={{ fontWeight: 'bold' }}>
+  Nuestro Equipo
+</Typography>
+
+      <Grid container spacing={3} justifyContent="center" wrap="wrap">
         {miembros && miembros.length > 0 ? (
           miembros.map((miembro, index) => (
-            <Grid item key={index} xs={12} sm={6} md={4}>
+            <Grid
+              item
+              key={index}
+              xs={12}
+              sm={6}
+              md={4}
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                marginBottom: '20px', // Añadir margen inferior a las tarjetas para evitar solapamiento
+              }}
+            >
               <Card
                 sx={{
                   display: 'flex',
@@ -44,8 +69,7 @@ const Equipo = () => {
                   boxShadow: 'none',
                   borderRadius: '8px',
                   padding: '20px',
-                  maxWidth: '280px',
-                  margin: '20px auto',
+                  maxWidth: '280px', // Limitar el tamaño de la tarjeta
                   backgroundColor: '#ffffff',
                   transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                   '&:hover': {
@@ -72,13 +96,45 @@ const Equipo = () => {
                 />
                 <CardContent>
                   <div>
-                    <Typography variant="h6" align="center" id={`nombre-${index}`} sx={{ fontSize: '1.3rem', fontWeight: 500, color: '#333', margin: 0 }}>
+                    <Typography
+                      variant="h6"
+                      align="center"
+                      id={`nombre-${index}`}
+                      sx={{
+                        fontSize: '1.3rem',
+                        fontWeight: 500,
+                        color: '#333',
+                        margin: 0,
+                      }}
+                    >
                       {miembro.nombre}
                     </Typography>
-                    <Typography variant="subtitle1" align="center" color="textSecondary" sx={{ fontSize: '1rem', color: '#777', margin: '5px 0' }}>
+                    <Typography
+                      variant="subtitle1"
+                      align="center"
+                      color="textSecondary"
+                      sx={{
+                        fontSize: '1rem',
+                        color: '#777',
+                        margin: '5px 0',
+                      }}
+                    >
                       {miembro.cargo}
                     </Typography>
-                    <Typography variant="body2" align="center" color="textSecondary" paragraph id={`descripcion-${index}`} sx={{ fontSize: '0.95rem', color: '#555', lineHeight: 1.6, marginTop: '10px', textAlign: 'justify' }}>
+                    <Typography
+                      variant="body2"
+                      align="center"
+                      color="textSecondary"
+                      paragraph
+                      id={`descripcion-${index}`}
+                      sx={{
+                        fontSize: '0.95rem',
+                        color: '#555',
+                        lineHeight: 1.6,
+                        marginTop: '10px',
+                        textAlign: 'justify',
+                      }}
+                    >
                       {miembro.descripcion}
                     </Typography>
                   </div>

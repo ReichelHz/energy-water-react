@@ -4,7 +4,8 @@ import {
   AccordionSummary,
   AccordionDetails,
   Typography,
-  CircularProgress
+  CircularProgress,
+  Box
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import faqData from '../faq.json'; // Asegúrate de que la ruta sea correcta
@@ -51,44 +52,72 @@ const FAQ = () => {
     <section className="faq-section" id="faq">
       <h2>Preguntas Frecuentes</h2>
       {questionsAndAnswers.map((qa, index) => (
-        <Accordion
+        <Box
           key={qa.question} // Usamos `qa.question` como clave única
           sx={{
-            backgroundColor: '#ffffff',
-            borderRadius: '8px',
-            padding: '15px 20px',
-            marginBottom: '10px',
-            width: '100%',
+            width: '90%',
+            maxWidth: '600px',
+            margin: '0 auto',
             boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
-            transition: 'background-color 0.3s ease, transform 0.2s ease',
-            '&:hover': {
-              backgroundColor: '#e0e0e0',
-              transform: 'translateY(-2px)'
-            }
+            borderRadius: '12px',  // Bordes redondeados
+            marginBottom: '15px',
+            backgroundColor: '#F9F9F9', // Fondo estático
           }}
         >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls={`panel${index}-content`}
-            id={`panel${index}-header`}
+          <Accordion
+            sx={{
+              backgroundColor: '#F9F9F9',
+              boxShadow: 'none', // Eliminamos la sombra para mayor control
+              width: '100%', // Aseguramos que el acordeón se ajuste bien
+              '& .MuiAccordionSummary-root': {
+                padding: '15px', // Aseguramos que el padding no cambie
+                minHeight: '56px', // Establecemos un tamaño mínimo estático
+              },
+              '& .MuiAccordionDetails-root': {
+                paddingTop: '10px', // Aseguramos que la sección de detalles no tenga padding raro
+                transition: 'none', // Eliminamos las transiciones en el details
+              },
+              '&.Mui-expanded': {
+                // Evitamos cualquier cambio de tamaño cuando el acordeón se expande
+                minHeight: '56px', // Aseguramos que la altura no cambie
+              },
+              '&:hover': {
+                // Eliminamos cualquier hover que cause el movimiento
+                boxShadow: 'none',
+                transform: 'none',
+              },
+            }}
           >
-            <Typography>{qa.question}</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography
-              sx={{
-                marginTop: '10px',
-                color: '#000',
-                fontSize: '16px',
-                lineHeight: 1.5,
-                textAlign: 'justify',
-                fontWeight: 'bold'
-              }}
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls={`panel${index}-content`}
+              id={`panel${index}-header`}
             >
-              {qa.answer}
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
+              <Typography
+                sx={{
+                  fontWeight: 'bold', // Las preguntas en negrita
+                  fontSize: '18px',
+                }}
+              >
+                {qa.question}
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography
+                sx={{
+                  color: '#000',
+                  fontSize: '16px',
+                  lineHeight: 1.5,
+                  textAlign: 'justify',
+                  fontWeight: 'normal', // Descripciones sin negrita
+                  paddingBottom: '10px', // Añadir padding hacia abajo
+                }}
+              >
+                {qa.answer}
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        </Box>
       ))}
     </section>
   );
